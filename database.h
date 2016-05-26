@@ -8,7 +8,8 @@ public:
     database();
     void verification();
     ~database();
+    QSqlDatabase getdata();
 private:
-    QSqlDatabase *db;
+    QSqlDatabase db;
 };
 #endif // DATABASE_H

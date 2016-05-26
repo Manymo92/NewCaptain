@@ -13,17 +13,20 @@ MainWindow::MainWindow(QWidget *parent) :
 {
     ui->setupUi(this);
 
+
     dt = new database();
+    dt->verification();
     model2 = new QSqlQueryModel(this);
-    model2->setQuery("SELECT * FROM employer");
-    ui->tableView->setModel(model2);
+
+   model2->setQuery("SELECT * FROM employer");
+   ui->tableView->setModel(model2);
 
     model2 = new QSqlQueryModel(this);
     model2->setQuery("SELECT * FROM autorisation");
-    ui->tableView_2->setModel(model2);
+    ui->tableView_2->setModel(model2);/**/
 
 
-    QSqlQuery query;
+   /* QSqlQuery query;
     if(query.exec("SELECT presence FROM employer"))
     {
         int nb=0 ;
@@ -37,7 +40,7 @@ MainWindow::MainWindow(QWidget *parent) :
                 ui->label->setNum(nb);
             }
         }
-    }
+    }*/
 }
 
 MainWindow::~MainWindow()
@@ -49,7 +52,18 @@ MainWindow::~MainWindow()
 void MainWindow::on_pushButton_clicked()
 {
     //db->close();
-    ui->centralWidget->close();
+  //  ui->centralWidget->close();
+   /* qDebug()<<db.contains();
+    qDebug()<<db.connectionName();
+    qDebug()<<db.connectOptions();
+
+    if(db.isOpen())
+    { qDebug()<<"dqsdqsd couver";
+
+    }else
+    {
+         qDebug()<<"ba NOON";
+    }*/
 }
 
 

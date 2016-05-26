@@ -36,6 +36,7 @@ private:
     QSqlTableModel *model;
     QSqlQueryModel *model2;
     database *dt;
+    //QSqlDatabase db;
 };
 
 #endif // MAINWINDOW_H
